@@ -168,9 +168,9 @@ SpriteMorph.prototype.categories =
     ];
 
 SpriteMorph.prototype.blockColor = {
-    motion : new Color(74, 108, 212),
-    looks : new Color(143, 86, 227),
-    sound : new Color(207, 74, 217),
+    motion : new Color(200, 200, 200),
+    looks : new Color(100, 100, 100),
+    sound : new Color(163, 63, 232),
     pen : new Color(0, 161, 120),
     control : new Color(230, 168, 34),
     sensing : new Color(4, 148, 220),
@@ -207,14 +207,16 @@ SpriteMorph.prototype.initBlocks = function () {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'move %n steps',
+            //spec: 'move forward %n steps',
+            spec: 'move him forward %n steps',
             defaults: [10]
         },
         turn: {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'turn %clockwise %n degrees',
+            spec: 'turn %clockwise %n degrees - make him dizzy!',
+            //spec: 'turn %clockwise %n degrees',
             defaults: [15]
         },
         turnLeft: {
@@ -6952,7 +6954,7 @@ WatcherMorph.prototype.userMenu = function () {
                 }
                 inp.type = 'file';
                 inp.style.color = "transparent";
-                inp.style.backgroundColor = "transparent";
+                //inp.style.backgroundColor = "transparent";
                 inp.style.border = "none";
                 inp.style.outline = "none";
                 inp.style.position = "absolute";
